@@ -10,12 +10,12 @@ filetype plugin indent on                     " load filetype plugin
 set viminfo='10,\"100,:20,%,n~/.viminfo       " remember certain things when we exit
 set autoread                                  " reload files changed outside of Vim
 set autowrite                                 " some commands should cause an automatic write
+set wildmenu                                  " lets you see all options on autocomplete
+set title                                     " sets the title of the terminal based on filename
 
-" ----------------------------------------------------------------------------
-"  UI
-" ----------------------------------------------------------------------------
-set ruler                             " show the cursor position all the time
-set backspace=start,indent,eol        " allow backspacing over anything in insert mode
+" ---------------------------------------------------------------------------- "  UI " ---------------------------------------------------------------------------- 
+set ruler                             " show the cursor position all the time 
+set backspace=start,indent,eol        " allow backspacing over anything in insert mode 
 set guioptions=eg                     " disable scrollbars, etc
 set wm=2                              " wrap margin on the right
 let NERDTreeWinSize=31                " how wide nerdtree ought to be
@@ -61,6 +61,9 @@ set directory=~/.vim/tmp               " where to keep swp files
 " ---------------------------------------------------------------------------
 " Mappings
 " ---------------------------------------------------------------------------
+
+" map :W to :w
+map :W :w
 
 " show/hide nerdtree
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
@@ -158,10 +161,10 @@ autocmd User Rails silent! Rnavcommand steps   features/step_definitions -glob=*
 set statusline=
 set statusline+=%-3.3n\                      " buffer number
 set statusline+=%f\                          " filename
-set number                                   " show line numbers
+"set number                                   " show line numbers
 set statusline+=%h%m%r%w                     " status flags
 set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type
-set statusline+=\ %{fugitive#statusline()}   " fugitive
+"set statusline+=\ %{fugitive#statusline()}   " fugitive
 set statusline+=%=                           " right align remainder
 set statusline+=%-14(%l,%c%V%)               " line, character
 set statusline+=%<%P                         " file position
