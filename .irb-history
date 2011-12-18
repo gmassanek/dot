@@ -1,0 +1,60 @@
+rails c production
+RAILS_ENV rails c
+RAILS_ENV=production rails c
+User.all.collect(&:email)
+LinkSave.where(["user_id in ?", [6, 7])
+])
+LinkSave.where(["user_id in ?", [6, 7]])
+LinkSave.where(["user_id in '?'", [6, 7]])
+LinkSave.where(["user_id in (?)", [6, 7]])
+Link.find 119
+LinkSave.last
+Link.last
+USer.find 5
+User.find 5
+Link.find 125
+l = _
+l.link_saves
+Authentications
+User.last
+User.last.authentications.destroy_all
+User.last.destroy
+User.last.authentications
+fg
+ls
+User.all
+Authentication.all
+Codemark.last.destroy
+Link.find_by_url("http://rspec.info/")
+Link.find_by_host("rspec.info")
+Codemark.find_by_link_id 5
+Codemark.find_by_link_id(5).destroy
+Link.find(5).destroy
+Codemark.last
+User.find 4
+User.find(4).authentications
+User.find 3
+User.find(3).authentications
+Authentication.find(1).destroy
+Topic.find_by_title("ut")
+Topic.last
+Topic.all.collect(&:title)
+Topic.count
+Link
+Link.find_by_title("Twitter")
+Link.find_by_host("twitter.com")
+Link.all
+Link.all.collect(&:title)
+Click.last
+Link.find(6)
+Link.find 76
+User.count
+User.first
+Authentication.count
+Authentication
+Authentication.first
+Authentation.last.destroy
+fg 2
+Authentication.last.destroy
+Authentication.last
+exit
