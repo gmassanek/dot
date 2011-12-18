@@ -18,7 +18,6 @@ set ruler                             " show the cursor position all the time
 set backspace=start,indent,eol        " allow backspacing over anything in insert mode 
 set guioptions=eg                     " disable scrollbars, etc
 set wm=2                              " wrap margin on the right
-let NERDTreeWinSize=31                " how wide nerdtree ought to be
 
 
 " ----------------------------------------------------------------------------
@@ -65,9 +64,8 @@ set directory=~/.vim/tmp               " where to keep swp files
 " map :W to :w
 map :W :w
 
-" show/hide nerdtree
-map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
-map <leader>n :NERDTreeFind<CR>
+" setting working path
+map <leader>cd :cd %:p:h<CR>
 
 " navigating search results
 map <leader>1 :cprevious <CR>
@@ -98,8 +96,8 @@ map <leader>F :CommandTFlush<CR>
 set wildignore+=vendor/plugins/**,vendor/linked_gems/**,vendor/gems/**,vendor/rails/**,coverage/**
 
 " ack shortcuts
-map <leader>A :Ack<cword><CR>
-map <leader>a :Ack<Space>
+"map <leader>A :Ack<cword><CR>
+"map <leader>a :Ack<Space>
 
 " normal mode shortcuts
 nmap <leader><Enter> _i<Enter><Esc>
@@ -126,6 +124,62 @@ imap <C-l> <Space>=><Space>
 " repeatedly replacing some text with something previously yanked.
 vmap <leader>p "0p
 vmap <leader>P "0P
+
+
+" ---------------------------------------------------------------------------
+"  rspec shortcuts
+" ---------------------------------------------------------------------------
+function! RunCucTests()
+  " Write the file and run tests for the given filename
+  :w
+  :silent !echo;echo;echo;echo;echo
+  exec ":! rake cucumber"
+endfunction
+
+
+function! RunTests(filename)
+  " Write the file and run tests for the given filename
+  :w
+  :silent !echo;echo;echo;echo;echo
+  exec ":! rspec " . a:filename
+endfunction
+      
+function! SetTestFile()
+  " Set the spec file that tests will be run for.
+  let t:grb_test_file=@%
+endfunction
+      
+function! RunTestFile(...)
+  if a:0
+    let command_suffix = a:1
+  else
+    let command_suffix = ""
+  endif
+
+  "Run the tests for the previously-marked file.
+  let in_spec_file = match(expand("%"), '_spec.rb$') != -1
+  if in_spec_file
+    call SetTestFile()
+  elseif !exists("t:grb_test_file")
+    return
+  end
+  call RunTests(t:grb_test_file .  command_suffix)
+endfunction
+
+function! RunNearestTest()
+  let spec_line_number =  line('.')
+  call  RunTestFile(":" .  spec_line_number)
+endfunction
+
+" Run this file
+map <leader>t :call RunTestFile()<cr>
+" Run only the example under the cursor
+map <leader>T :call RunNearestTest()<cr>
+" Run all test files
+map <leader>a :call RunTests('spec')<cr>
+" Run all cucumber test files
+map <leader>c :call RunCucTests()<cr>
+
 
 
 " ---------------------------------------------------------------------------
@@ -216,6 +270,10 @@ augroup END
 
 augroup markdown
   autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:>
+  set wrap
+  set linebreak
+  set nolist
+  set formatoptions+=1
 augroup END
 
 augroup god
@@ -340,3 +398,8 @@ function! IndTxtObj(inner)
   normal! $
 endfunction
 
+"-------------------------
+"   Some extra settings
+"-------------------------
+
+"autocmd User Rails Rnavcommand fabricator spec/fabricators -suffix=_fabricator.rb -default=model()
