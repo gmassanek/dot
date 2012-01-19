@@ -12,6 +12,7 @@ set autoread                                  " reload files changed outside of 
 set autowrite                                 " some commands should cause an automatic write
 set wildmenu                                  " lets you see all options on autocomplete
 set title                                     " sets the title of the terminal based on filename
+filetype plugin on
 
 " ---------------------------------------------------------------------------- "  UI " ---------------------------------------------------------------------------- 
 set ruler                             " show the cursor position all the time 
@@ -404,3 +405,30 @@ endfunction
 "-------------------------
 
 "autocmd User Rails Rnavcommand fabricator spec/fabricators -suffix=_fabricator.rb -default=model()
+"
+" Remap the tab key to do autocompletion or indentation depending on the
+" context (from http://www.vim.org/tips/tip.php?tip_id=102)
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <s-tab> <c-n>
+
+function! PromoteToLet()
+  :normal! dd
+  " :exec '?^\s*it\>'
+  :normal! P
+  :.s/\(\w\+\) = \(.*\)$/let(:\1) { \2 }/
+  :normal ==
+  " :normal! <<
+  " :normal! ilet(:
+  " :normal! f 2cl) {
+  " :normal! A }
+endfunction
+:command! PromoteToLet :call PromoteToLet()
+:map <leader>p :PromoteToLet<cr>
