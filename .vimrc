@@ -7,73 +7,67 @@ set nocompatible
 let mapleader = ","
 set history=1000                              " lots of command line history
 filetype plugin indent on                     " load filetype plugin
-set viminfo='10,\"100,:20,%,n~/.viminfo       " remember certain things when we exit
+"set viminfo='10,\"100,:20,%,n~/.viminfo       " remember certain things when we exit
 set autoread                                  " reload files changed outside of Vim
 set autowrite                                 " some commands should cause an automatic write
-set wildmenu                                  " lets you see all options on autocomplete
 set title                                     " sets the title of the terminal based on filename
 filetype plugin on
 
-" ---------------------------------------------------------------------------- "  UI " ---------------------------------------------------------------------------- 
+" use Y to yank the rest of the line
+map Y y$
+
+" ---------------------------------------------------------------------------- 
+"  UI 
+" ---------------------------------------------------------------------------- 
+set number                            " show line numbers
 set ruler                             " show the cursor position all the time 
 set backspace=start,indent,eol        " allow backspacing over anything in insert mode 
 set guioptions=eg                     " disable scrollbars, etc
 set wm=2                              " wrap margin on the right
 
-
 " ----------------------------------------------------------------------------
 "  Visual cues
 " ----------------------------------------------------------------------------
 set incsearch               " do incremental searching
+"set nohlsearch              " don't highlight searches
 set laststatus=2            " always show the status line
-set nohlsearch              " don't highlight searches
 set visualbell              " quiet
 set noerrorbells            " quiet
-
-
 
 " ----------------------------------------------------------------------------
 "  Text formatting
 " ----------------------------------------------------------------------------
 set autoindent             " automatically indent new lines
 set expandtab              " expand tabs to spaces
+set nosmarttab             " no tabs, thanks.
 set nowrap                 " do not wrap lines
-set softtabstop=2          " yep, two
+set softtabstop=2          " yerp
 set shiftwidth=2
 set tabstop=4
-set nosmarttab             " no tabs, thanks.
-
 
 " ----------------------------------------------------------------------------
 "  Backups
 " ----------------------------------------------------------------------------
-
 set nobackup                           " do not keep backups after close
 set nowritebackup                      " do not keep a backup while working
 set noswapfile                         " don't keep swp files either
-set backupdir=~/.vim/backups           " store backups under ~/.vim/backup
-set backupcopy=yes                     " keep attributes of original file
-set backupskip=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*
-set directory=~/.vim/tmp               " where to keep swp files
-
-
+"set backupdir=~/.vim/backups           " store backups under ~/.vim/backup
+"set backupcopy=yes                     " keep attributes of original file
+"set backupskip=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*
+"set directory=~/.vim/tmp               " where to keep swp files
 
 " ---------------------------------------------------------------------------
 " Mappings
 " ---------------------------------------------------------------------------
 
-" map :W to :w
-map :W :w
+" unhighlight searches on hitting enter
+nnoremap <CR> :nohlsearch<cr>
+
+" because what does :W do?
+" map :W :w
 
 " setting working path
 map <leader>cd :cd %:p:h<CR>
-
-" navigating search results
-map <leader>1 :cprevious <CR>
-map <leader>2 :cnext <CR>
-
-" clean up cucumber tables
-map <leader>= :Tabularize /\|<CR>
 
 " move between windows
 map <C-J> <C-W>j
@@ -97,35 +91,23 @@ map <leader>F :CommandTFlush<CR>
 set wildignore+=vendor/plugins/**,vendor/linked_gems/**,vendor/gems/**,vendor/rails/**,coverage/**
 
 " ack shortcuts
-"map <leader>A :Ack<cword><CR>
-"map <leader>a :Ack<Space>
-
-" normal mode shortcuts
-nmap <leader><Enter> _i<Enter><Esc>
-nmap <leader><Space> i<Space><Esc>
+"map <leader>S :Ack<cword><CR>
+"map <leader>s :Ack<Space>
 
 " switch between a symbol and a string
-nmap <leader>: ds"i:<Esc>e
-nmap <leader>" bhxcsw"
+nmap <leader>" bbr"ea"<Esc>
+nmap <leader>: bhs:<Esc>wwx
 
 " ctags shortcuts
 nmap <C-\> <C-]>
 nmap g<C-\> g<C-]>
 
-" easily back to normal mode
-imap ;; <Esc>
-
-" auto complete shortcut
-imap <S-Space> <C-n>
-
-" hash syntax shortcut
+" insert hash rocket
 imap <C-l> <Space>=><Space>
 
 " paste the last thing really yanked rather than deleted.  Useful for 
 " repeatedly replacing some text with something previously yanked.
-vmap <leader>p "0p
-vmap <leader>P "0P
-
+vmap <leader>P "0p
 
 " ---------------------------------------------------------------------------
 "  rspec shortcuts
@@ -136,7 +118,6 @@ function! RunCucTests()
   :silent !echo;echo;echo;echo;echo
   exec ":! rake cucumber"
 endfunction
-
 
 function! RunTests(filename)
   " Write the file and run tests for the given filename
@@ -216,7 +197,6 @@ autocmd User Rails silent! Rnavcommand steps   features/step_definitions -glob=*
 set statusline=
 set statusline+=%-3.3n\                      " buffer number
 set statusline+=%f\                          " filename
-"set number                                   " show line numbers
 set statusline+=%h%m%r%w                     " status flags
 set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type
 "set statusline+=\ %{fugitive#statusline()}   " fugitive
@@ -228,7 +208,8 @@ set statusline+=%<%P                         " file position
 " ---------------------------------------------------------------------------
 "  Command-t customization
 " ---------------------------------------------------------------------------
-let g:CommandTMaxHeight=20
+let g:CommandTMaxFiles=20000
+let g:CommandTMaxHeight=15
 
 
 " ---------------------------------------------------------------------------
@@ -252,8 +233,6 @@ autocmd FileType ruby let g:surround_35  = "#{\r}"   " #
 set clipboard+=unnamed
 set grepprg=ack
 set grepformat=%f:%l:%m
-
-inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 set completeopt=longest,menu,preview        " insert mode comletion options
 set complete=.
@@ -312,43 +291,6 @@ augroup JumpCursorOnEdit
  \ unlet b:doopenfold |
  \ endif
 augroup END
-
-
-
-" ---------------------------------------------------------------------------
-"  Open url on current line in browser
-" ---------------------------------------------------------------------------
-function! HandleURI()
-  let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;:]*')
-  echo s:uri
-  if s:uri != ""
-	  exec "!open \"" . s:uri . "\""
-  else
-	  echo "No URI found in line."
-  endif
-endfunction
-nmap <Leader>b :call HandleURI()<CR>
-
-
-" ---------------------------------------------------------------------------
-" Allow toggling of the quickfix window
-" ---------------------------------------------------------------------------
-command! -bang -nargs=? QFix call QFixToggle(<bang>0)
-function! QFixToggle(forced)
-  if exists("g:qfix_win") && a:forced == 0
-    cclose
-  else
-    execute "copen 15"
-  endif
-endfunction
-nmap <Leader>q :QFix<CR>
-
-augroup QFixToggle
- autocmd!
- autocmd BufWinEnter quickfix let g:qfix_win = bufnr("$")
- autocmd BufWinLeave * if exists("g:qfix_win") && expand("<abuf>") == g:qfix_win | unlet! g:qfix_win | endif
-augroup END
-
 
 if $TERM == 'screen'
   set term=xterm
@@ -421,14 +363,9 @@ inoremap <s-tab> <c-n>
 
 function! PromoteToLet()
   :normal! dd
-  " :exec '?^\s*it\>'
   :normal! P
   :.s/\(\w\+\) = \(.*\)$/let(:\1) { \2 }/
   :normal ==
-  " :normal! <<
-  " :normal! ilet(:
-  " :normal! f 2cl) {
-  " :normal! A }
 endfunction
 :command! PromoteToLet :call PromoteToLet()
 :map <leader>p :PromoteToLet<cr>
