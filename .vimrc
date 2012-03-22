@@ -216,7 +216,7 @@ let g:CommandTMaxHeight=15
 "  Colors/Theme
 " ---------------------------------------------------------------------------
 :set t_Co=256
-colorscheme grb256
+colorscheme eddie
 syntax on
 
 
