@@ -1,0 +1,22 @@
+[user]
+	email = geoff@groupon.com
+	name = Geoff Massanek
+[core]
+	editor = vim
+[color]
+	ui = true
+[alias]
+  st     =   status
+  ci     =   commit
+  br     =   branch
+  co     =   checkout
+  df     =   diff
+  lg     =   log -p
+  l      =   log --graph --pretty=format':%C(yellow)%h%Cred%d%Creset %s %C(white) %an, %ar%Creset'
+  me     =   log --graph --pretty=format':%C(yellow)%h%Cred%d%Creset %s %C(white) %an, %ar%Creset' --author=Geoff
+  lp     =   log --pretty="format:'%h %ad | %an - %s%d'" --date=short
+  lgs    =   log --stat
+  ls     =   ls-files
+  pr     =   pull --rebase
+  aa     =   add --all
+  amend  =   commit --amend
