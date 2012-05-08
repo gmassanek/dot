@@ -1,10 +1,10 @@
 [user]
-	email = geoff@groupon.com
-	name = Geoff Massanek
+  email = geoff@groupon.com
+  name = Geoff Massanek
 [core]
-	editor = vim
+  editor = vim
 [color]
-	ui = true
+  ui = true
 [alias]
   st     =   status
   ci     =   commit
