@@ -18,6 +18,8 @@ alias teardowncs='script/runner -e test ../orders_integration/teardown_orders_db
 alias seedcs='script/runner -e test ../orders_integration/seed_orders_db.rb'
 alias rebuildcs="echo 'Tearing down...' && teardowncs && echo 'Seeding...' && seedcs"
 alias gprom="git pull --rebase origin master"
+alias cs='cd ~/code/cs-groupon'
+alias gp='cd ~/code/groupon'
 
 function git_remote_url() {
 # DOES NOT WORK FOR HTTPS, ONLY git@github.com:username/repo.git

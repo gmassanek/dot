@@ -45,6 +45,9 @@ set softtabstop=2          " yerp
 set shiftwidth=2
 set tabstop=4
 
+set foldmethod=indent
+set foldlevelstart=100
+nnoremap <Space> za
 " ----------------------------------------------------------------------------
 "  Backups
 " ----------------------------------------------------------------------------
@@ -88,7 +91,7 @@ map <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloade
 " command-t plugin
 silent! nmap <unique> <silent> <Leader>f :CommandT<CR>
 map <leader>F :CommandTFlush<CR>
-set wildignore+=vendor/plugins/**,vendor/linked_gems/**,vendor/gems/**,vendor/rails/**,coverage/**
+set wildignore+=groupon-web/**,vendor/plugins/**,vendor/linked_gems/**,vendor/gems/**,vendor/rails/**,coverage/**
 
 " ack shortcuts
 "map <leader>S :Ack<cword><CR>
