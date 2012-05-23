@@ -9,6 +9,7 @@
 --type-set=nib=.xib
 --type-set=plist=.plist
 --type-set=tmstuff=.tmproj,.tm_build_errors
+--type-set=cucumber=.feature
 --nonib
 --notmstuff
 --noxcode
