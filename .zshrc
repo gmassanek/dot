@@ -1,5 +1,17 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.bash_history
+HISTSIZE=1000
+SAVEHIST=1000
+setopt autocd extendedglob notify
+unsetopt appendhistory nomatch
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/Users/gmassanek/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -66,9 +78,9 @@ alias gpush="git_push_open"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+#plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/Users/geoff/.rvm/gems/ree-1.8.7-2011.03@groupon/bin:/Users/geoff/.rvm/gems/ree-1.8.7-2011.03@global/bin:/Users/geoff/.rvm/rubies/ree-1.8.7-2011.03/bin:/Users/geoff/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
