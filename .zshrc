@@ -14,9 +14,14 @@ ZSH_THEME="robbyrussell"
 
 # CS App aliases
 # From groupon app
-alias teardowncs='script/runner -e test ../orders_integration/teardown_orders_db.rb'
-alias seedcs='script/runner -e test ../orders_integration/seed_orders_db.rb'
-alias rebuildcs="echo 'Tearing down...' && teardowncs && echo 'Seeding...' && seedcs"
+#
+#
+alias teardowncs="echo 'Tearing down...' && cd orders && script/runner -e test ../orders_integration/teardown_orders_db.rb && cd .. && cd groupon-web && script/runner -e test ../orders_integration/teardown_orders_db.rb && cd .."
+alias seed_groupon_web="echo 'Seeding groupon-web...' && cd groupon-web && script/runner -e test ../orders_integration/seed_groupon_web_db.rb && cd .."
+alias seed_orders="echo 'Seeding orders...' && cd orders && script/runner -e test ../orders_integration/seed_orders_db.rb && cd .."
+alias seedcs="seed_groupon_web && seed_orders"
+
+alias rebuildcs="teardowncs && echo 'Seeding...' && seedcs"
 alias gprom="git pull --rebase origin master"
 alias cs='cd ~/code/cs-groupon'
 alias gp='cd ~/code/groupon'

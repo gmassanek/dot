@@ -14,3 +14,4 @@
 --notmstuff
 --noxcode
 --ignore-dir=tmp
+--ignore-dir=groupon-web

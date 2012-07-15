@@ -91,7 +91,7 @@ map <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloade
 " command-t plugin
 silent! nmap <unique> <silent> <Leader>f :CommandT<CR>
 map <leader>F :CommandTFlush<CR>
-set wildignore+=groupon-web/**,vendor/plugins/**,vendor/linked_gems/**,vendor/gems/**,vendor/rails/**,coverage/**
+set wildignore+=orders/**,groupon-web/**,vendor/gems/**,vendor/plugins/**,vendor/linked_gems/**,vendor/rails/**,coverage/**
 
 " ack shortcuts
 "map <leader>S :Ack<cword><CR>
@@ -126,6 +126,7 @@ function! RunTests(filename)
   " Write the file and run tests for the given filename
   :w
   :silent !echo;echo;echo;echo;echo
+  echo ":! rspec " . a:filename
   exec ":! rspec " . a:filename
 endfunction
       
