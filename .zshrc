@@ -1,27 +1,21 @@
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.bash_history
+HISTFILE=~/.history
 HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd extendedglob notify
 unsetopt appendhistory nomatch
-bindkey -e
+bindkey -v
 # End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/Users/gmassanek/.zshrc'
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-
-
-
-
-# PROMPT
+# git completion
+autoload -U compinit && compinit
 
 # Initialize colors.
 autoload -U colors
 colors
  
+# PROMPT
+
 # Allow for functions in the prompt.
 setopt PROMPT_SUBST
  
@@ -67,6 +61,7 @@ alias rebuildcs="teardowncs && echo 'Seeding...' && seedcs"
 alias gprom="git pull --rebase origin master"
 alias cs='cd ~/code/cs-groupon'
 alias gp='cd ~/code/groupon'
+alias cm='cd ~/rails/codemarks'
 
 function git_remote_url() {
 # DOES NOT WORK FOR HTTPS, ONLY git@github.com:username/repo.git
@@ -113,7 +108,7 @@ alias gpush="git_push_open"
 #source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/Users/geoff/.rvm/gems/ree-1.8.7-2011.03@groupon/bin:/Users/geoff/.rvm/gems/ree-1.8.7-2011.03@global/bin:/Users/geoff/.rvm/rubies/ree-1.8.7-2011.03/bin:/Users/geoff/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
+export PATH=/Users/geoff/.rvm/gems/ree-1.8.7-2011.03@groupon/bin:/Users/geoff/.rvm/gems/ree-1.8.7-2011.03@global/bin:/Users/geoff/.rvm/rubies/ree-1.8.7-2011.03/bin:/Users/geoff/.rvm/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/bin
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi 
 
 
