@@ -1,3 +1,5 @@
+if [ -f ~/.bash_private ]; then . ~/.bash_private; fi
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.history
 HISTSIZE=1000
