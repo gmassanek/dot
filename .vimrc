@@ -89,8 +89,8 @@ map <leader>v :sp ~/.vimrc<CR><C-W>_
 map <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " command-t plugin
-silent! nmap <unique> <silent> <Leader>f :CommandT<CR>
-map <leader>F :CommandTFlush<CR>
+silent! nmap <unique> <silent> <Leader>f :CtrlP<CR>
+map <leader>F <F5>
 set wildignore+=orders/**,node_modules/**,grouponweb/**,vendor/gems/**,vendor/plugins/**,vendor/linked_gems/**,vendor/rails/**,coverage/**
 
 " ack shortcuts
@@ -373,3 +373,6 @@ function! PromoteToLet()
 endfunction
 :command! PromoteToLet :call PromoteToLet()
 :map <leader>p :PromoteToLet<cr>
+
+" redraw
+map <leader>r :silent !resize<CR>
