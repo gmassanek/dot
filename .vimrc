@@ -1,4 +1,48 @@
 " ---------------------------------------------------------------------------
+"  Colors/Theme
+" ---------------------------------------------------------------------------
+:set t_Co=256
+colorscheme eddie
+syntax on
+syntax enable
+
+" ---------------------------------------------------------------------------
+" Vundle
+" ---------------------------------------------------------------------------
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'tpope/vim-fugitive'
+
+" Git plugin not hosted on GitHub
+Plugin 'git://git.wincent.com/command-t.git'
+
+Plugin 'kchmck/vim-coffee-script'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList          - list configured plugins
+" :PluginInstall(!)    - install (update) plugins
+" :PluginSearch(!) foo - search (or refresh cache first) for foo
+" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+Bundle 'wakatime/vim-wakatime' 
+
+" ---------------------------------------------------------------------------
 " General
 " ---------------------------------------------------------------------------
 
@@ -6,12 +50,10 @@ call pathogen#runtime_append_all_bundles()    " using pathogen for a bunch of pl
 set nocompatible
 let mapleader = ","
 set history=1000                              " lots of command line history
-filetype plugin indent on                     " load filetype plugin
 "set viminfo='10,\"100,:20,%,n~/.viminfo       " remember certain things when we exit
 set autoread                                  " reload files changed outside of Vim
 set autowrite                                 " some commands should cause an automatic write
 set title                                     " sets the title of the terminal based on filename
-filetype plugin on
 
 " use Y to yank the rest of the line
 map Y y$
@@ -91,7 +133,7 @@ map <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloade
 " command-t plugin
 silent! nmap <unique> <silent> <Leader>f :CtrlP<CR>
 map <leader>F <F5>
-set wildignore+=orders/**,node_modules/**,grouponweb/**,vendor/gems/**,vendor/plugins/**,vendor/linked_gems/**,vendor/rails/**,coverage/**
+set wildignore+=doc/rdoc/**,orders/**,node_modules,grouponweb/**,vendor/gems/**,vendor/plugins/**,vendor/linked_gems/**,vendor/rails/**,coverage/**,tmp,bower_components
 
 " ack shortcuts
 "map <leader>S :Ack<cword><CR>
@@ -214,14 +256,6 @@ set statusline+=%<%P                         " file position
 " ---------------------------------------------------------------------------
 let g:CommandTMaxFiles=20000
 let g:CommandTMaxHeight=15
-
-
-" ---------------------------------------------------------------------------
-"  Colors/Theme
-" ---------------------------------------------------------------------------
-:set t_Co=256
-colorscheme eddie
-syntax on
 
 
 " ---------------------------------------------------------------------------
@@ -376,3 +410,11 @@ endfunction
 
 " redraw
 map <leader>r :silent !resize<CR>
+
+
+" JSON PARSING
+" JSONTidy!
+function! s:json_tidy()
+  execute "%!python -m json.tool"
+  endfunction
+  command! JSONTidy call s:json_tidy()

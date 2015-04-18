@@ -15,3 +15,8 @@
 --noxcode
 --ignore-dir=tmp
 --ignore-dir=groupon-web
+--ignore-dir=log
+--ignore-dir=service_discovery_schemas
+--ignore-dir=backups
+--ignore-dir=cassette_library
+--ignore-dir=fixtures

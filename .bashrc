@@ -1,10 +1,20 @@
-#export RUBY_HEAP_MIN_SLOTS=500000
-#export RUBY_HEAP_SLOTS_INCREMENT=250000
-#
-#export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-#
-#export RUBY_GC_MALLOC_LIMIT=50000000
-#
-if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi 
+export PATH="$HOME/.rbenv/bin:$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin"
+eval "$(rbenv init -)"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+alias be="bundle exec"
+alias rspec="be rspec"
+alias rake="be rake"
+alias cucumber="be cucumber"
+alias rails="be rails"
+alias cap="be cap"
+alias script="be script"
+
+alias gprom="git pull --rebase origin master"
+
+source ~/.bash_private
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+export GOPATH=$HOME/go
+
+ulimit -n 4096
