@@ -21,6 +21,8 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'tpope/vim-fugitive'
 
+Plugin 'fatih/vim-go'
+
 " Git plugin not hosted on GitHub
 Plugin 'git://git.wincent.com/command-t.git'
 
@@ -418,3 +420,10 @@ function! s:json_tidy()
   execute "%!python -m json.tool"
   endfunction
   command! JSONTidy call s:json_tidy()
+
+
+" ------------------------
+"  Go Stuff
+"  -----------------------
+
+let g:go_fmt_command = "goimports"
