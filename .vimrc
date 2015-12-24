@@ -15,34 +15,17 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
-" let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-
 Plugin 'tpope/vim-fugitive'
-
 Plugin 'fatih/vim-go'
-
-" Git plugin not hosted on GitHub
 Plugin 'git://git.wincent.com/command-t.git'
-
 Plugin 'kchmck/vim-coffee-script'
+call vundle#end()
+filetype plugin indent on
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList          - list configured plugins
-" :PluginInstall(!)    - install (update) plugins
-" :PluginSearch(!) foo - search (or refresh cache first) for foo
-" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 Bundle 'wakatime/vim-wakatime' 
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " ---------------------------------------------------------------------------
 " General
