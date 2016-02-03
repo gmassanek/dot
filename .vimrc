@@ -20,6 +20,12 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'fatih/vim-go'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'kchmck/vim-coffee-script'
+
+Plugin 'ntpeters/vim-better-whitespace'
+" Features: highlights all trailing whitespaces (spaces and tabs)
+" :ToggleWhitespace to show/hide whitespace highlighting
+" " :StripWhitespace to get rid of highlighted stuff
+"
 call vundle#end()
 filetype plugin indent on
 
