@@ -1,4 +1,4 @@
-export GOPATH=$HOME/projects/go
+export GOPATH=$HOME/work/go
 export PATH="$HOME/.rbenv/bin:$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
