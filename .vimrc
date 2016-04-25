@@ -19,17 +19,11 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'fatih/vim-go'
 Plugin 'git://git.wincent.com/command-t.git'
-Plugin 'kchmck/vim-coffee-script'
-
 Plugin 'ntpeters/vim-better-whitespace'
-" Features: highlights all trailing whitespaces (spaces and tabs)
-" :ToggleWhitespace to show/hide whitespace highlighting
-" " :StripWhitespace to get rid of highlighted stuff
-"
 call vundle#end()
 filetype plugin indent on
 
-Bundle 'wakatime/vim-wakatime' 
+Bundle 'wakatime/vim-wakatime'
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
@@ -49,12 +43,12 @@ set title                                     " sets the title of the terminal b
 " use Y to yank the rest of the line
 map Y y$
 
-" ---------------------------------------------------------------------------- 
-"  UI 
-" ---------------------------------------------------------------------------- 
+" ----------------------------------------------------------------------------
+"  UI
+" ----------------------------------------------------------------------------
 set number                            " show line numbers
-set ruler                             " show the cursor position all the time 
-set backspace=start,indent,eol        " allow backspacing over anything in insert mode 
+set ruler                             " show the cursor position all the time
+set backspace=start,indent,eol        " allow backspacing over anything in insert mode
 set guioptions=eg                     " disable scrollbars, etc
 set wm=2                              " wrap margin on the right
 
@@ -141,7 +135,7 @@ nmap g<C-\> g<C-]>
 " insert hash rocket
 imap <C-l> <Space>=><Space>
 
-" paste the last thing really yanked rather than deleted.  Useful for 
+" paste the last thing really yanked rather than deleted.  Useful for
 " repeatedly replacing some text with something previously yanked.
 vmap <leader>P "0p
 
@@ -162,12 +156,12 @@ function! RunTests(filename)
   echo ":! rspec " . a:filename
   exec ":! rspec " . a:filename
 endfunction
-      
+
 function! SetTestFile()
   " Set the spec file that tests will be run for.
   let t:grb_test_file=@%
 endfunction
-      
+
 function! RunTestFile(...)
   if a:0
     let command_suffix = a:1
@@ -207,18 +201,18 @@ map <leader>c :call RunCucTests()<cr>
 nmap <leader>r :Rake<CR>
 nmap <leader>R :.Rake<CR>
 
-nmap <leader><leader>c :Rcontroller 
-nmap <leader><leader>m :Rmodel 
-nmap <leader><leader>v :Rview 
-nmap <leader><leader>h :Rhelper 
-nmap <leader><leader>i :Rinitializer 
-nmap <leader><leader>e :Renvironment 
-nmap <leader><leader>l :Rlib 
-nmap <leader><leader>f :Rfeature 
-nmap <leader><leader>u :Runittest 
-nmap <leader><leader>j :Rjavascript 
-nmap <leader><leader>t :Rtask 
-nmap <leader><leader>r :Rspec 
+nmap <leader><leader>c :Rcontroller
+nmap <leader><leader>m :Rmodel
+nmap <leader><leader>v :Rview
+nmap <leader><leader>h :Rhelper
+nmap <leader><leader>i :Rinitializer
+nmap <leader><leader>e :Renvironment
+nmap <leader><leader>l :Rlib
+nmap <leader><leader>f :Rfeature
+nmap <leader><leader>u :Runittest
+nmap <leader><leader>j :Rjavascript
+nmap <leader><leader>t :Rtask
+nmap <leader><leader>r :Rspec
 
 
 " ---------------------------------------------------------------------------
@@ -272,10 +266,10 @@ au FocusLost * :wall
 
 augroup myfiletypes
   "clear old autocmds in group
-  autocmd!    
-  
+  autocmd!
+
   "for ruby, autoindent with two spaces, always expand tabs
-  autocmd FileType ruby,haml,eruby,yaml set ai sw=2 sts=2 et     
+  autocmd FileType ruby,haml,eruby,yaml set ai sw=2 sts=2 et
 augroup END
 
 augroup markdown
