@@ -410,3 +410,12 @@ function! s:json_tidy()
 "  -----------------------
 
 let g:go_fmt_command = "goimports"
+
+set runtimepath^=~/.vim/bundle/ag
+
+" -----------------------
+"  AG Stuff
+" -----------------------
+" Open the Ag command and place the cursor into the quotes
+nmap ,ag :Ag ""<Left>
+nmap ,af :AgFile ""<Left>
