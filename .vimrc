@@ -90,6 +90,7 @@ set noswapfile                         " don't keep swp files either
 " ---------------------------------------------------------------------------
 " Mappings
 " ---------------------------------------------------------------------------
+nmap ,w :StripWhitespace<CR>
 
 " unhighlight searches on hitting enter
 nnoremap <CR> :nohlsearch<cr>
