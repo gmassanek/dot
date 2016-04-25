@@ -18,6 +18,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'fatih/vim-go'
+Plugin 'tpope/vim-surround'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'ntpeters/vim-better-whitespace'
 call vundle#end()
@@ -115,10 +116,19 @@ map <leader>K [M
 map <leader>v :sp ~/.vimrc<CR><C-W>_
 map <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
-" command-t plugin
-silent! nmap <unique> <silent> <Leader>f :CtrlP<CR>
-map <leader>F <F5>
+" control p plugin
 set wildignore+=doc/rdoc/**,orders/**,node_modules,grouponweb/**,vendor/gems/**,vendor/plugins/**,vendor/linked_gems/**,vendor/rails/**,coverage/**,tmp,bower_components
+let g:ctrlp_user_command =
+  \ 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
+let g:ctrlp_use_caching = 0
+let g:ctrlp_by_filename = 1
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_map = ',t'
+nnoremap <silent> ,t :CtrlP<CR>
+let g:ctrlp_map = ',f'
+nnoremap <silent> ,f :CtrlP<CR>
+nnoremap <silent> ,b :CtrlPBuffer<cr>
+
 
 " ack shortcuts
 "map <leader>S :Ack<cword><CR>
@@ -192,35 +202,6 @@ map <leader>T :call RunNearestTest()<cr>
 map <leader>a :call RunTests('spec')<cr>
 " Run all cucumber test files
 map <leader>c :call RunCucTests()<cr>
-
-
-
-" ---------------------------------------------------------------------------
-"  rails.vim plugin mappings
-" ---------------------------------------------------------------------------
-nmap <leader>r :Rake<CR>
-nmap <leader>R :.Rake<CR>
-
-nmap <leader><leader>c :Rcontroller
-nmap <leader><leader>m :Rmodel
-nmap <leader><leader>v :Rview
-nmap <leader><leader>h :Rhelper
-nmap <leader><leader>i :Rinitializer
-nmap <leader><leader>e :Renvironment
-nmap <leader><leader>l :Rlib
-nmap <leader><leader>f :Rfeature
-nmap <leader><leader>u :Runittest
-nmap <leader><leader>j :Rjavascript
-nmap <leader><leader>t :Rtask
-nmap <leader><leader>r :Rspec
-
-
-" ---------------------------------------------------------------------------
-"  rails.vim autocommands
-" ---------------------------------------------------------------------------
-autocmd User Rails silent! Rnavcommand feature features                  -glob=* -suffix=.feature
-autocmd User Rails silent! Rnavcommand steps   features/step_definitions -glob=* -suffix=_steps.rb
-
 
 " ---------------------------------------------------------------------------
 "  Status line customization
@@ -419,3 +400,76 @@ set runtimepath^=~/.vim/bundle/ag
 " Open the Ag command and place the cursor into the quotes
 nmap ,ag :Ag ""<Left>
 nmap ,af :AgFile ""<Left>
+
+"grep for 'def foo'
+",gg = Grep! - using Ag the silver searcher
+" open up a grep line, with a quote started for the search
+nnoremap ,gg :Ag ""<left>
+nnoremap <silent> ,gd :Ag 'def <cword>'<CR>
+
+" ----------------------
+"  Abbreviations
+" ----------------------
+"Abbreviations, trigger by typing the abbreviation and hitting space
+
+abbr rlb Rails.logger.banner
+abbr rld Rails.logger.debug
+abbr pry! require 'pry'; binding.pry
+abbr cl! console.log( )<left><left>
+
+" Rspec Before
+abbr rbf before { }<left><left>
+
+" ----------------------
+"  GH Markwon
+" ----------------------
+" Support for github flavored markdown
+" via https://github.com/jtratner/vim-flavored-markdown
+augroup markdown
+    au!
+    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+augroup END
+
+" AutoTag
+" Seems to have problems with some vim files
+let g:autotagExcludeSuffixes="tml.xml.text.txt.vim"
+
+" Automatically jump to a file at the correct line number
+" i.e. if you visual highlight over /some/path.rb:50 then using 'gf' on it will take
+" you to that line
+
+" use ,gf to go to file in a vertical split
+nnoremap <silent> ,gf   :vertical botright wincmd F<CR>
+
+" --------------------
+"  CTAGS
+" --------------------
+set shell=bash\ -i
+
+" ---------------------------------------------------------------------------
+"  rails.vim plugin mappings
+" ---------------------------------------------------------------------------
+nnoremap ,vv :Eview<cr>
+nnoremap ,cc :Econtroller<cr>
+nmap <leader>r :Rake<CR>
+nmap <leader>R :.Rake<CR>
+
+nmap <leader><leader>c :Rcontroller
+nmap <leader><leader>m :Rmodel
+nmap <leader><leader>v :Rview
+nmap <leader><leader>h :Rhelper
+nmap <leader><leader>i :Rinitializer
+nmap <leader><leader>e :Renvironment
+nmap <leader><leader>l :Rlib
+nmap <leader><leader>f :Rfeature
+nmap <leader><leader>u :Runittest
+nmap <leader><leader>j :Rjavascript
+nmap <leader><leader>t :Rtask
+nmap <leader><leader>r :Rspec
+
+" ---------------------------------------------------------------------------
+"  rails.vim autocommands
+" ---------------------------------------------------------------------------
+autocmd User Rails silent! Rnavcommand feature features                  -glob=* -suffix=.feature
+autocmd User Rails silent! Rnavcommand steps   features/step_definitions -glob=* -suffix=_steps.rb
+
