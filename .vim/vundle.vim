@@ -18,6 +18,7 @@ Plugin 'rking/ag.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'scrooloose/syntastic'
+Plugin 'wakatime/vim-wakatime'
 call vundle#end()
 filetype plugin indent on
 
