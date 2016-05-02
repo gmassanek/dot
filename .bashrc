@@ -2,6 +2,9 @@ export GOPATH=$HOME/work/go
 export PATH="$HOME/.rbenv/bin:$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+SPARK_HOME="/usr/local/Cellar/apache-spark/1.5.2"
+PATH=$PATH:$SCALA_HOME/bin
+
 alias be="bundle exec"
 alias rspec="be rspec"
 alias rake="be rake"
@@ -11,6 +14,7 @@ alias cap="be cap"
 alias script="be script"
 alias getdocker='eval "$(docker-machine env default)"'
 alias zr='zeus rspec'
+alias zs='zeus start'
 
 source ~/.bash_private
 

@@ -16,6 +16,7 @@
 [alias]
   # add
   a = add                           # add
+  aa = add --all                    # add
   chunkyadd = add --patch           # stage commits chunk by chunk
 
   # via http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
@@ -31,6 +32,7 @@
 
   # commit
   c = commit -m                     # commit with message
+  cim = commit -m                   # commit with message
   ca = commit -am                   # commit all with message
   ci = commit                       # commit
   amend = commit --amend            # ammend your last commit
