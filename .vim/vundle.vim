@@ -20,7 +20,6 @@ Plugin 'mxw/vim-jsx'
 Plugin 'scrooloose/syntastic'
 Plugin 'wakatime/vim-wakatime'
 Plugin 'skwp/greplace.vim'
+Plugin 'tpope/vim-rails'
 call vundle#end()
 filetype plugin indent on
-
-"Bundle 'wakatime/vim-wakatime'
