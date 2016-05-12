@@ -28,3 +28,7 @@ nnoremap ,gg :Ag ""<left>
 
 "Grep for usages of the current file
 nnoremap ,gcf :exec "Ag " . expand("%:t:r")<CR>
+
+"Use the silver searcher for lightning fast Gsearch command
+set grepprg=git\ grep
+let g:grep_cmd_opts = '--line-number'
