@@ -12,7 +12,6 @@ alias cucumber="be cucumber"
 alias rails="be rails"
 alias cap="be cap"
 alias script="be script"
-alias getdocker='eval "$(docker-machine env default)"'
 alias zr='zeus rspec'
 alias zs='zeus start'
 
