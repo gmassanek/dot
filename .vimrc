@@ -10,3 +10,4 @@ source ~/.vim/abbreviations.vim
 source ~/.vim/ctl-p.vim
 source ~/.vim/go.vim
 source ~/.vim/nerdtree.vim
+source ~/.vim/search.vim
