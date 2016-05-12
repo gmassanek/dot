@@ -32,3 +32,11 @@ nnoremap ,gcf :exec "Ag " . expand("%:t:r")<CR>
 "Use the silver searcher for lightning fast Gsearch command
 set grepprg=git\ grep
 let g:grep_cmd_opts = '--line-number'
+
+
+" hit ,g to find the definition of the current class
+" this uses ctags. the standard way to get this is Ctrl-]
+nnoremap <silent> ,g <C-]>
+
+" use ,G to jump to tag in a vertical split
+nnoremap <silent> ,G :let word=expand("<cword>")<CR>:vsp<CR>:wincmd w<cr>:exec("tag ". word)<cr>
