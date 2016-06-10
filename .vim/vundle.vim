@@ -22,5 +22,6 @@ Plugin 'wakatime/vim-wakatime'
 Plugin 'skwp/greplace.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-bundler'
+Plugin 'skwp/vim-spec-finder'
 call vundle#end()
 filetype plugin indent on

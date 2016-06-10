@@ -14,6 +14,7 @@ alias cap="be cap"
 alias script="be script"
 alias zr='zeus rspec'
 alias zs='zeus start'
+alias fs='foreman start'
 
 source ~/.bash_private
 

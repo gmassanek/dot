@@ -120,3 +120,12 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" copy current filename into system clipboard - mnemonic: (c)urrent(f)ilename
+" this is helpful to paste someone the path you're looking at
+nnoremap <silent> ,cf :let @* = expand("%:~")<CR>
+nnoremap <silent> ,cn :let @* = expand("%:t")<CR>
+
+nnoremap <leader>s :RelatedSpecVOpen<CR>
+nnoremap <leader>S :RelatedSpecOpen<CR>
+
+autocmd BufRead,BufNewFile *.es6 setfiletype javascript
