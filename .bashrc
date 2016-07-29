@@ -5,6 +5,10 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 SPARK_HOME="/usr/local/Cellar/apache-spark/1.5.2"
 PATH=$PATH:$SCALA_HOME/bin
 
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
 alias be="bundle exec"
 alias rspec="be rspec"
 alias rake="be rake"
@@ -20,6 +24,7 @@ source ~/.bash_private
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="node_modules/.bin:$PATH"
 
 # Git Aliases
 alias gs='git status'

@@ -129,3 +129,7 @@ nnoremap <leader>s :RelatedSpecVOpen<CR>
 nnoremap <leader>S :RelatedSpecOpen<CR>
 
 autocmd BufRead,BufNewFile *.es6 setfiletype javascript
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+
+let g:syntastic_auto_loc_list = 2
+let g:syntastic_quiet_messages = {}
