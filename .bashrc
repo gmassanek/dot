@@ -1,5 +1,6 @@
-export GOPATH=$HOME/work/go
+export GOPATH=$HOME/dev/go
 export PATH="$HOME/.rbenv/bin:$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin"
+export PATH="/usr/local/opt/llvm/bin":$PATH
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 SPARK_HOME="/usr/local/Cellar/apache-spark/1.5.2"
@@ -8,6 +9,9 @@ PATH=$PATH:$SCALA_HOME/bin
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
+
+ssh-add ~/.ssh/staging.pem
+ssh-add ~/.ssh/production.pem
 
 alias be="bundle exec"
 alias rspec="be rspec"
@@ -87,3 +91,9 @@ alias gt='git t'
 alias gbg='git bisect good'
 alias gbb='git bisect bad'
 alias gdmb='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
+alias grmm='git branch --merged | grep -v "\*" | grep -v master | grep -v dev | xargs -n 1 git branch -d'
+
+alias convoxp='convox login convox-production-2029365087.us-east-1.elb.amazonaws.com'
+alias convoxs='convox login reverb-staging-1222177346.us-east-1.elb.amazonaws.com'
+
+alias vim="nvim"

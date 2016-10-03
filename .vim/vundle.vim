@@ -1,27 +1,34 @@
 " ---------------------------------------------------------------------------
-" Vundle
+" Plug
 " ---------------------------------------------------------------------------
-set nocompatible              " be iMproved, required
-filetype off                  " required
+call plug#begin()
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'fatih/vim-go'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'rking/ag.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'scrooloose/syntastic'
-Plugin 'wakatime/vim-wakatime'
-Plugin 'skwp/greplace.vim'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-bundler'
-Plugin 'skwp/vim-spec-finder'
-call vundle#end()
-filetype plugin indent on
+Plug 'gmarik/Vundle.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdcommenter'
+Plug 'rking/ag.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'scrooloose/syntastic'
+Plug 'wakatime/vim-wakatime'
+Plug 'skwp/greplace.vim'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-bundler'
+Plug 'skwp/vim-spec-finder'
+Plug 'tomtom/tcomment_vim'
+
+Plug 'kassio/neoterm'
+Plug 'Shougo/deoplete.nvim'
+
+" Go
+Plug 'fatih/vim-go', {'for': 'go'}
+Plug 'zchee/deoplete-go', {'do': 'make', 'for': 'go'}
+
+" C/C++/ObjC
+Plug 'zchee/deoplete-clang'
+Plug 'rhysd/vim-clang-format'
+
+call plug#end()

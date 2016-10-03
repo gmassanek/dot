@@ -133,3 +133,8 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_quiet_messages = {}
+
+
+" Command-/ to toggle comments
+map <D-/> :TComment<CR>
+imap <D-/> <Esc>:TComment<CR>i

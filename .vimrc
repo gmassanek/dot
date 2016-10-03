@@ -12,3 +12,5 @@ source ~/.vim/go.vim
 source ~/.vim/nerdtree.vim
 source ~/.vim/search.vim
 source ~/.vim/rails.vim
+
+source ~/.vim/neovim.vim
