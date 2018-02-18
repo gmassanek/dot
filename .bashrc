@@ -1,3 +1,5 @@
+source ~/dev/ops/shell/aliases.sh
+
 export GOPATH=$HOME/dev/go
 export PATH="$HOME/.rbenv/bin:$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin"
 export PATH="/usr/local/opt/llvm/bin":$PATH
