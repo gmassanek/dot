@@ -20,3 +20,6 @@
 --ignore-dir=backups
 --ignore-dir=cassette_library
 --ignore-dir=fixtures
+--ignore-dir=.happypack
+--ignore-dir=public/assets/webpack
+--ignore-dir=tags

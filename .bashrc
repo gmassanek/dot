@@ -97,3 +97,5 @@ alias convoxp='convox login convox-production-2029365087.us-east-1.elb.amazonaws
 alias convoxs='convox login reverb-staging-1222177346.us-east-1.elb.amazonaws.com'
 
 alias vim="nvim"
+
+ulimit -S -n 8192

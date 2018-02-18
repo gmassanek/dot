@@ -115,7 +115,7 @@
   # the usual default is to push all branches
   default = upstream
 [core]
-  autocrlf = false
+  autocrlf = input
   editor = vim
   excludesfile = ~/.yadr/git/gitignore
 [advice]
@@ -133,3 +133,4 @@
   path = .gitconfig.user
 [user]
 	email = geoff@reverb.com
+	name = Geoff Massanek
