@@ -7,6 +7,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 SPARK_HOME="/usr/local/Cellar/apache-spark/1.5.2"
 PATH=$PATH:$SCALA_HOME/bin
+export CDPATH=.:~:$GOPATH/src/github.com/reverbdotcom:~/dev
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
