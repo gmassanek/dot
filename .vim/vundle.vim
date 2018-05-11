@@ -21,12 +21,12 @@ Plug 'skwp/vim-spec-finder'
 Plug 'tomtom/tcomment_vim'
 Plug 'JazzCore/ctrlp-cmatcher'
 Plug 'leafgarland/typescript-vim'
-
-Plug 'kassio/neoterm'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-" Go
 Plug 'fatih/vim-go', {'for': 'go'}
+Plug 'kassio/neoterm'
+
+" Autocomplete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" prereq: go get -u github.com/nsf/gocode
 Plug 'zchee/deoplete-go', {'do': 'make', 'for': 'go'}
 
 " C/C++/ObjC
