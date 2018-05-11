@@ -23,7 +23,7 @@ Plug 'JazzCore/ctrlp-cmatcher'
 Plug 'leafgarland/typescript-vim'
 
 Plug 'kassio/neoterm'
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Go
 Plug 'fatih/vim-go', {'for': 'go'}
