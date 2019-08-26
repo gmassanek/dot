@@ -25,11 +25,10 @@ echo 'Symlinking .rspec'
 ln -s .dot_files/.rspec ~/.rspec
 
 echo 'Symlinking .vim'
-rm -rf .vim
 ln -s .dot_files/.vim ~/.vim
 
 echo 'Symlinking .vimrc'
-ln -s .dot_files/.vimrc ~/.vimrc
+cp .dot_files/.vimrc ~/.config/nvim/init.vim
 
 echo 'Install brew'
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -79,3 +78,8 @@ brew install saml2aws
 cask install "docker"
 cask install "visual-studio-code"
 
+
+python -m pip install setuptools
+python -m pip install --upgrade pynvim
+python2 -m pip install --upgrade pynvim
+python3 -m pip install --upgrade pynvim

@@ -1,36 +1,42 @@
 " ---------------------------------------------------------------------------
 " Plug
 " ---------------------------------------------------------------------------
-call plug#begin()
+set nocompatible              " be iMproved, required
+filetype off                  " required
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.config/nvim/bundle/Vundle.vim
+call vundle#begin("~/.config/nvim/bundle")
 
-Plug 'gmarik/Vundle.vim'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-surround'
-Plug 'scrooloose/nerdcommenter'
-Plug 'rking/ag.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'scrooloose/syntastic'
-Plug 'wakatime/vim-wakatime'
-Plug 'skwp/greplace.vim'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-bundler'
-Plug 'skwp/vim-spec-finder'
-Plug 'tomtom/tcomment_vim'
-Plug 'JazzCore/ctrlp-cmatcher'
-Plug 'leafgarland/typescript-vim'
-Plug 'fatih/vim-go', {'for': 'go'}
-Plug 'kassio/neoterm'
+"call plug#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'rking/ag.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'scrooloose/syntastic'
+Plugin 'skwp/greplace.vim'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-bundler'
+Plugin 'skwp/vim-spec-finder'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'JazzCore/ctrlp-cmatcher'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'fatih/vim-go', {'for': 'go'}
+Plugin 'kassio/neoterm'
 
 " Autocomplete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " prereq: go get -u github.com/nsf/gocode
-Plug 'zchee/deoplete-go', {'do': 'make', 'for': 'go'}
+Plugin 'zchee/deoplete-go', {'do': 'make', 'for': 'go'}
 
 " C/C++/ObjC
-Plug 'zchee/deoplete-clang'
-Plug 'rhysd/vim-clang-format'
+Plugin 'zchee/deoplete-clang'
+Plugin 'rhysd/vim-clang-format'
 
-call plug#end()
+call vundle#end()
+filetype plugin indent on       " required
