@@ -54,3 +54,5 @@ alias l='docker-compose -f $HOME/dev/local/docker-compose.yml'
 alias vim="nvim"
 
 ulimit -S -n 8192
+
+PS1='\w$(__git_ps1 " (%s)") \$ '
