@@ -16,10 +16,13 @@
 --ignore-dir=tmp
 --ignore-dir=groupon-web
 --ignore-dir=log
+--ignore-dir=dist
 --ignore-dir=service_discovery_schemas
 --ignore-dir=backups
 --ignore-dir=cassette_library
 --ignore-dir=fixtures
 --ignore-dir=.happypack
 --ignore-dir=public/assets/webpack
---ignore-dir=tags
+--ignore-dir=doc
+--ignore-dir=coverage
+--ignore-file=is:tags

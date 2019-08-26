@@ -33,4 +33,4 @@ function! OpenNerdTree()
     NERDTreeToggle
   endif
 endfunction
-nnoremap <silent> <C-\> :call OpenNerdTree()<CR>
+nnoremap <silent> <C-M> :call OpenNerdTree()<CR>
