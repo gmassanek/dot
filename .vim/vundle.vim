@@ -26,7 +26,7 @@ Plugin 'skwp/vim-spec-finder'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'JazzCore/ctrlp-cmatcher'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'fatih/vim-go', {'for': 'go'}
+"Plugin 'fatih/vim-go', {'for': 'go'}
 Plugin 'kassio/neoterm'
 
 " Autocomplete

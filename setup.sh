@@ -44,6 +44,7 @@ brew install node@10
 brew install "awscli"
 brew install "bash"
 brew install "bash-completion"
+brew install "cmake"
 brew install "convox"
 brew install "curl"
 brew install "findutils"
@@ -55,6 +56,7 @@ brew install "jq"
 brew install "libxml2"
 brew install "libxslt"
 brew install "macvim"
+brew install "neovim"
 brew install "nginx"
 brew install "nvim"
 brew install "openssl"
@@ -68,13 +70,12 @@ brew install "rbenv"
 brew install "readline"
 brew install "ruby-build"
 brew install "rv"
+brew install "saml2aws"
 brew install "the_silver_searcher"
 brew install "vcprompt"
 brew install "vim"
 brew install "wget"
 brew install "yarn", args: ["ignore-dependencies"]
-brew install neovim
-brew install saml2aws
 cask install "docker"
 cask install "visual-studio-code"
 
@@ -86,3 +87,9 @@ python3 -m pip install --upgrade pynvim
 
 #npm install -g neovim
 #gem install neovim
+
+mkdir ~/Downloads/screenshots
+defaults write com.apple.screencapture location ~/Documents/screenshots
+
+# vim go autocomplete
+go get -u github.com/nsf/gocode
