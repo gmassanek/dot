@@ -54,6 +54,7 @@
   l      =   "!source ~/.githelpers && pretty_git_log"
   me     =   "!source ~/.githelpers && pretty_git_log --author=Geoff"
   h      =   "!source ~/.githelpers && show_git_head"
+  b      =   "!source ~/.githelpers && pretty_git_branch"
 
   # (yadr) log
   # l = log --graph --date=short
