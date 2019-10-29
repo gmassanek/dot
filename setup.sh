@@ -37,6 +37,7 @@ echo 'Install brew stuff'
 brew tap "caskroom/cask"
 brew tap "reverbdotcom/rv"
 brew tap "versent/homebrew-taps"
+brew tap "reverbdotcom/reverb"
 
 brew install node@10
 
@@ -76,6 +77,7 @@ brew install "vcprompt"
 brew install "vim"
 brew install "wget"
 brew install "yarn", args: ["ignore-dependencies"]
+brew install "protopkg"
 cask install "docker"
 cask install "visual-studio-code"
 
