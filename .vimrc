@@ -14,3 +14,10 @@ source ~/.vim/search.vim
 source ~/.vim/rails.vim
 
 source ~/.vim/neovim.vim
+
+set formatoptions=l
+set wrap
+set linebreak
+set nolist
+set textwidth=0
+set wrapmargin=0

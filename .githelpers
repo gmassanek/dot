@@ -47,10 +47,6 @@ pretty_git_branch() {
     git branch -v --color=always --format=${BRANCH_FORMAT} $* | pretty_git_format
 }
 
-pretty_git_branch_sorted() {
-    git branch -v --color=always --format=${BRANCH_FORMAT} --sort=-committerdate $* | pretty_git_format
-}
-
 pretty_git_format() {
     # Replace (2 years ago) with (2 years)
     sed -Ee 's/(^[^<]*) ago\)/\1)/' |
