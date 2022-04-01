@@ -249,13 +249,13 @@ augroup myfiletypes
   autocmd FileType ruby,haml,eruby,yaml set ai sw=2 sts=2 et     
 augroup END
 
-augroup markdown
-  autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:>
-  set wrap
-  set linebreak
-  set nolist
-  set formatoptions+=1
-augroup END
+"augroup markdown
+"  autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:>
+"  "set wrap
+"  "set linebreak
+"  set nolist
+"  set formatoptions+=1
+"augroup END
 
 augroup god
   autocmd BufRead *.god set filetype=ruby

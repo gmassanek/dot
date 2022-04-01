@@ -16,7 +16,10 @@
 --ignore-dir=tmp
 --ignore-dir=groupon-web
 --ignore-dir=log
+--ignore-dir=logs
+--ignore-dir=target
 --ignore-dir=dist
+--ignore-dir=build
 --ignore-dir=service_discovery_schemas
 --ignore-dir=backups
 --ignore-dir=cassette_library
@@ -26,3 +29,6 @@
 --ignore-dir=doc
 --ignore-dir=coverage
 --ignore-file=is:tags
+--ignore-file=is:tsconfig.tsbuildinfo
+--ignore-file=is:rql.json
+--ignore-file=is:rql.ts

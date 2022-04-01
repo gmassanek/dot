@@ -26,13 +26,21 @@ Plugin 'skwp/vim-spec-finder'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'JazzCore/ctrlp-cmatcher'
 Plugin 'leafgarland/typescript-vim'
-"Plugin 'fatih/vim-go', {'for': 'go'}
+Plugin 'fatih/vim-go', {'for': 'go'}
 Plugin 'kassio/neoterm'
 
 " Autocomplete
-Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+if has('nvim')
+  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plugin 'Shougo/deoplete.nvim'
+  Plugin 'roxma/nvim-yarp'
+  Plugin 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+
 " prereq: go get -u github.com/nsf/gocode
-Plugin 'zchee/deoplete-go', {'do': 'make', 'for': 'go'}
+"Plugin 'zchee/deoplete-go', {'do': 'make', 'for': 'go'}
 
 " C/C++/ObjC
 Plugin 'zchee/deoplete-clang'
