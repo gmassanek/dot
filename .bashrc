@@ -1,4 +1,5 @@
-source ~/dev/ops/shell/aliases.sh
+#source ~/dev/ops/shell/aliases.sh
+source ~/.git-prompt.sh
 
 export GOPATH=$HOME/dev/go
 export PATH="$HOME/.rbenv/bin:$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin"
@@ -18,8 +19,8 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
-ssh-add ~/.ssh/staging.pem
-ssh-add ~/.ssh/production.pem
+#ssh-add ~/.ssh/staging.pem
+#ssh-add ~/.ssh/production.pem
 
 alias be="bundle exec"
 alias rspec="be rspec"
@@ -56,3 +57,4 @@ alias vim="nvim"
 ulimit -S -n 8192
 
 PS1='\w$(__git_ps1 " (%s)") \$ '
+#PS1='\u $(__git_ps1 "(%s)")\$ '
