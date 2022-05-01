@@ -1,3 +1,39 @@
+# Start
+## Install Chrome from Safari
+## Login into 1Password extension
+## Install github ssh commands
+## Clone this repo
+
+# Settings
+## Trackpad
+  # 1 click turn on tap to click
+  # Increase Tracking Speed a couple ticks
+## Keyboard
+  # Modifier Keys: Caps -> ^Cntl
+  # Repeat: Max
+  # Delay Until Repeat: Short
+  # Shortcuts -> Spotlight -> Show Spotlight search -> ^Space
+  # Shortcuts -> Show Finder search window
+## Dock and Menu Bar
+  # Automatically hide and show the Dock
+
+# Brew & Terminal
+echo 'Install brew'
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+brew install --cask iterm2
+chsh -s /bin/bash
+
+# Vim and bashrc
+brew install "vim"
+brew install "neovim"
+
+echo 'Symlinking nvim setup'
+cd ~/.config
+ln -s .dot_files/.vim nvim
+cd ~
+
 echo 'Symlinking .bashrc'
 rm ~/.bashrc
 ln -s .dot_files/.bashrc ~/.bashrc
@@ -6,6 +42,33 @@ echo 'Symlinking .bash_profile'
 rm ~/.bash_profile
 ln -s .dot_files/.bash_profile ~/.bash_profile
 
+echo 'Symlinking .git-prompt.sh'
+rm ~/.git-prompt.sh
+ln -s .dot_files/.git-prompt.sh ~/.git-prompt.sh
+
+touch ~/.bash_private
+
+## neovim / deoplete dependencies
+brew install "pyenv"
+brew install "pipenv"
+brew install "python"
+
+#python -m pip install setuptools
+#python -m pip install --upgrade pynvim
+#python2 -m pip install --upgrade pynvim
+python3 -m pip install --upgrade pynvim
+
+# run :checkhealth
+# gem install neovim
+# gem environment
+
+
+# run :BundleInstall inside vim
+# run :UpdateRemotePlugins
+# vim should load cleanly
+
+
+# Dependencies
 echo 'Symlinking .ackrc'
 ln -s .dot_files/.ackrc ~/.ackrc
 
@@ -24,70 +87,49 @@ ln -s .dot_files/.githelpers ~/.githelpers
 echo 'Symlinking .rspec'
 ln -s .dot_files/.rspec ~/.rspec
 
-echo 'Symlinking .vim'
-ln -s .dot_files/.vim ~/.vim
-
-echo 'Symlinking .vimrc'
-#cp .dot_files/.vimrc ~/.config/nvim/init.vim
-ln .dot_files/.vimrc ~/.config/nvim/init.vim
-
-echo 'Install brew'
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
 echo 'Install brew stuff'
-brew tap "caskroom/cask"
-brew tap "reverbdotcom/rv"
+brew tap "homebrew/cask"
 brew tap "versent/homebrew-taps"
-brew tap "reverbdotcom/reverb"
 
-brew install node@10
+brew install "node"
+brew install "nodenv" && \
+brew install "awscli" && \
+brew install "bash" && \
+brew install "bash-completion" && \
+brew install "cmake" && \
+brew install "convox" && \
+brew install "curl" && \
+brew install "findutils" && \
+brew install "git" && \
+brew install "gnu-sed" && \
+brew install "go" && \
+brew install "icu4c" && \
+brew install "jq" && \
+brew install "libxml2" && \
+brew install "libxslt" && \
+brew install "nginx" && \
+brew install "openssl" && \
+brew install "overmind" && \
+brew install "postgres" && \
+brew install "protobuf" && \
+brew install "protoc-gen-go" && \
+brew install "rbenv" && \
+brew install "readline" && \
+brew install "ruby-build" && \
+brew install "saml2aws" && \
+brew install "the_silver_searcher" && \
+brew install "vcprompt" && \
+brew install "wget" && \
+brew install --cask  "docker" && \
+brew install --cask "visual-studio-code" && \
+brew install --cask slack && \
+brew install --cask rectangle && \
+brew install --cask caffeine && \
+brew install ack
 
-brew install "nodenv"
-brew install "awscli"
-brew install "bash"
-brew install "bash-completion"
-brew install "cmake"
-brew install "convox"
-brew install "curl"
-brew install "findutils"
-brew install "git"
-brew install "gnu-sed"
-brew install "go"
-brew install "icu4c"
-brew install "jq"
-brew install "libxml2"
-brew install "libxslt"
-brew install "macvim"
-brew install "neovim"
-brew install "nginx"
-brew install "nvim"
-brew install "openssl"
-brew install "overmind"
-brew install "pipenv"
-brew install "postgres"
-brew install "protobuf"
-brew install "protoc-gen-go"
-brew install "protopkg"
-brew install "pyenv"
-brew install "python@3.8"
-brew install "rbenv"
-brew install "readline"
-brew install "ruby-build"
-brew install "rv"
-brew install "saml2aws"
-brew install "the_silver_searcher"
-brew install "vcprompt"
-brew install "vim"
-brew install "wget"
-brew install "yarn", args: ["ignore-dependencies"]
-cask install "docker"
-cask install "visual-studio-code"
+#brew install "yarn", args: ["ignore-dependencies"] && \
 
 
-python -m pip install setuptools
-python -m pip install --upgrade pynvim
-python2 -m pip install --upgrade pynvim
-python3 -m pip install --upgrade pynvim
 
 #npm install -g neovim
 #gem install neovim
@@ -96,4 +138,12 @@ mkdir ~/Downloads/screenshots
 defaults write com.apple.screencapture location ~/Documents/screenshots
 
 # vim go autocomplete
-go get -u github.com/nsf/gocode
+# go get -u github.com/nsf/gocode
+  # 'go get' is no longer supported outside a module.
+
+
+# App Settings
+## Rectangle
+  # Left Half
+  # Right Half
+  # Maximize

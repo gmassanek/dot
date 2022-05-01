@@ -18,6 +18,8 @@ export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 SPARK_HOME="/usr/local/Cellar/apache-spark/1.5.2"
 PATH=$PATH:$SCALA_HOME/bin
 export CDPATH=.:~:$GOPATH/src/github.com/reverbdotcom:~/dev:~/dev/stellar

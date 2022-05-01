@@ -1,19 +1,19 @@
-source ~/.vim/vundle.vim
-source ~/.vim/global.vim
-source ~/.vim/status_bar.vim
-source ~/.vim/keybindings.vim
-source ~/.vim/operate_on_indent_levels.vim
-source ~/.vim/autocomplete.vim
-source ~/.vim/promote_to_let.vim
-source ~/.vim/file_search.vim
-source ~/.vim/abbreviations.vim
-source ~/.vim/ctl-p.vim
-source ~/.vim/go.vim
-source ~/.vim/nerdtree.vim
-source ~/.vim/search.vim
-source ~/.vim/rails.vim
+source ~/.config/nvim/vundle.vim
+source ~/.config/nvim/global.vim
+source ~/.config/nvim/status_bar.vim
+source ~/.config/nvim/keybindings.vim
+source ~/.config/nvim/operate_on_indent_levels.vim
+source ~/.config/nvim/autocomplete.vim
+source ~/.config/nvim/promote_to_let.vim
+source ~/.config/nvim/file_search.vim
+source ~/.config/nvim/abbreviations.vim
+source ~/.config/nvim/ctl-p.vim
+source ~/.config/nvim/go.vim
+source ~/.config/nvim/nerdtree.vim
+source ~/.config/nvim/search.vim
+source ~/.config/nvim/rails.vim
 
-source ~/.vim/neovim.vim
+source ~/.config/nvim/neovim.vim
 
 set formatoptions=l
 set wrap
