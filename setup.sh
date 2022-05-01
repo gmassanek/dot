@@ -31,20 +31,20 @@ brew install "neovim"
 
 echo 'Symlinking nvim setup'
 cd ~/.config
-ln -s .dot_files/.vim nvim
+ln -s .dot/.vim nvim
 cd ~
 
 echo 'Symlinking .bashrc'
 rm ~/.bashrc
-ln -s .dot_files/.bashrc ~/.bashrc
+ln -s .dot/.bashrc ~/.bashrc
 
 echo 'Symlinking .bash_profile'
 rm ~/.bash_profile
-ln -s .dot_files/.bash_profile ~/.bash_profile
+ln -s .dot/.bash_profile ~/.bash_profile
 
 echo 'Symlinking .git-prompt.sh'
 rm ~/.git-prompt.sh
-ln -s .dot_files/.git-prompt.sh ~/.git-prompt.sh
+ln -s .dot/.git-prompt.sh ~/.git-prompt.sh
 
 touch ~/.bash_private
 
@@ -70,22 +70,22 @@ python3 -m pip install --upgrade pynvim
 
 # Dependencies
 echo 'Symlinking .ackrc'
-ln -s .dot_files/.ackrc ~/.ackrc
+ln -s .dot/.ackrc ~/.ackrc
 
 echo 'Symlinking .gemrc'
-ln -s .dot_files/.gemrc ~/.gemrc
+ln -s .dot/.gemrc ~/.gemrc
 
 echo 'Symlinking .gitconfig'
-ln -s .dot_files/.gitconfig ~/.gitconfig
+ln -s .dot/.gitconfig ~/.gitconfig
 
 echo 'Symlinking .gitignore'
-ln -s .dot_files/.gitignore ~/.gitignore
+ln -s .dot/.gitignore ~/.gitignore
 
 echo 'Symlinking .githelpers'
-ln -s .dot_files/.githelpers ~/.githelpers
+ln -s .dot/.githelpers ~/.githelpers
 
 echo 'Symlinking .rspec'
-ln -s .dot_files/.rspec ~/.rspec
+ln -s .dot/.rspec ~/.rspec
 
 echo 'Install brew stuff'
 brew tap "homebrew/cask"
