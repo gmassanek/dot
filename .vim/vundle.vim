@@ -5,7 +5,8 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin("~/.config/nvim/bundle")
+"call vundle#begin("~/.config/nvim/bundle")
+call vundle#begin()
 
 "call plug#begin()
 
@@ -37,7 +38,6 @@ else
   Plugin 'roxma/nvim-yarp'
   Plugin 'roxma/vim-hug-neovim-rpc'
 endif
-let g:deoplete#enable_at_startup = 1
 
 " prereq: go get -u github.com/nsf/gocode
 "Plugin 'zchee/deoplete-go', {'do': 'make', 'for': 'go'}

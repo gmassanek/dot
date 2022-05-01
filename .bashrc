@@ -1,3 +1,6 @@
+# MacOS tries to get me to switch to zsh
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 #source ~/dev/ops/shell/aliases.sh
 source ~/.git-prompt.sh
 
@@ -10,12 +13,14 @@ export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+#export PATH="/usr/local/opt/python@3.9/libexec/bin:$PATH"
+#export PATH="/usr/local/opt/openssl@3/bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 
 SPARK_HOME="/usr/local/Cellar/apache-spark/1.5.2"
 PATH=$PATH:$SCALA_HOME/bin
-export CDPATH=.:~:$GOPATH/src/github.com/reverbdotcom:~/dev
+export CDPATH=.:~:$GOPATH/src/github.com/reverbdotcom:~/dev:~/dev/stellar
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
@@ -67,7 +72,7 @@ PS1='\w$(__git_ps1 " (%s)") \$ '
 
 # Python & pyenv initialization
 export PYENV_SHELL=bash
-source '/usr/local/Cellar/pyenv/1.2.13/completions/pyenv.bash'
+#source '/usr/local/Cellar/pyenv/1.2.13/completions/pyenv.bash'
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"

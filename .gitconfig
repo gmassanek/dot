@@ -117,7 +117,7 @@
   default = upstream
 [core]
   autocrlf = input
-  editor = vim
+  editor = nvim
   excludesfile = ~/.yadr/git/gitignore
 [advice]
   statusHints = false
@@ -133,5 +133,5 @@
 [include]
   path = .gitconfig.user
 [user]
-	email = geoff@reverb.com
+	email = geoff@stellarcred.com
 	name = Geoff Massanek

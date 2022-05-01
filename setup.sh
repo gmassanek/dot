@@ -28,7 +28,8 @@ echo 'Symlinking .vim'
 ln -s .dot_files/.vim ~/.vim
 
 echo 'Symlinking .vimrc'
-cp .dot_files/.vimrc ~/.config/nvim/init.vim
+#cp .dot_files/.vimrc ~/.config/nvim/init.vim
+ln .dot_files/.vimrc ~/.config/nvim/init.vim
 
 echo 'Install brew'
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -41,7 +42,7 @@ brew tap "reverbdotcom/reverb"
 
 brew install node@10
 
-#brew install "nodenv"
+brew install "nodenv"
 brew install "awscli"
 brew install "bash"
 brew install "bash-completion"
