@@ -14,8 +14,12 @@
   # Delay Until Repeat: Short
   # Shortcuts -> Spotlight -> Show Spotlight search -> ^Space
   # Shortcuts -> Show Finder search window
+  # Dictation -> Shortcut to Off
 ## Dock and Menu Bar
   # Automatically hide and show the Dock
+## Security & Privacy
+  # Screen Recording, add Google Chrome, iTerm
+  # Accessibility, add Caffeine, Rectangle
 
 # Brew & Terminal
 echo 'Install brew'
@@ -148,3 +152,5 @@ defaults write com.apple.screencapture location ~/Documents/screenshots
   # Left Half
   # Right Half
   # Maximize
+## ITerm
+  # Profiles > Working Directory > Reuse previous session's directory

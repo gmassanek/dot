@@ -1,3 +1,5 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # MacOS tries to get me to switch to zsh
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
@@ -15,10 +17,8 @@ export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 #export PATH="/usr/local/opt/python@3.9/libexec/bin:$PATH"
 #export PATH="/usr/local/opt/openssl@3/bin:$PATH"
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which rbenv > /dev/null; then eval "$(rbenv init - bash)"; fi
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
-
-eval "$(/opt/homebrew/bin/brew shellenv)"
 
 SPARK_HOME="/usr/local/Cellar/apache-spark/1.5.2"
 PATH=$PATH:$SCALA_HOME/bin
@@ -74,6 +74,10 @@ PS1='\w$(__git_ps1 " (%s)") \$ '
 
 # Python & pyenv initialization
 export PYENV_SHELL=bash
+
+# Setting PATH for Python 2.7
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 #source '/usr/local/Cellar/pyenv/1.2.13/completions/pyenv.bash'
 
 export PYENV_ROOT="$HOME/.pyenv"
