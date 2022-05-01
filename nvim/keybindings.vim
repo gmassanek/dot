@@ -8,8 +8,8 @@ map <C-H> <C-W>h
 map <C-L> <C-W>l
 
 " edit vimrc
-map <leader>v :sp ~/.vimrc<CR><C-W>_
-map <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+map <leader>v :sp ~/.config/init.vim<CR><C-W>_
+map <leader>V :source ~/.config/init.vim<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " line folding
 nnoremap <Space> za
