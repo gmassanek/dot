@@ -133,6 +133,7 @@ brew install --cask "visual-studio-code" && \
 brew install --cask slack && \
 brew install --cask rectangle && \
 brew install --cask caffeine && \
+brew install --cask spotify && \
 brew install ack && \
 brew install graphviz 
 
