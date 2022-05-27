@@ -145,7 +145,8 @@ brew install graphviz
 #gem install neovim
 
 mkdir ~/Downloads/screenshots
-defaults write com.apple.screencapture location ~/Documents/screenshots
+# press shift-cmd-5
+# change location to ~/Downloads/screenshots
 
 # vim go autocomplete
 # go get -u github.com/nsf/gocode
