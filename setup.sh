@@ -8,6 +8,9 @@
 ## Trackpad
   # 1 click turn on tap to click
   # Increase Tracking Speed a couple ticks
+## Mouse
+  # Secondary Click
+  # Increase tracking speed
 ## Keyboard
   # Modifier Keys: Caps -> ^Cntl
   # Repeat: Max
