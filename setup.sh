@@ -155,5 +155,7 @@ defaults write com.apple.screencapture location ~/Documents/screenshots
   # Left Half
   # Right Half
   # Maximize
+  # Hide menu bar icon
+  # Repeated Commands: cycle 1/2, 2/3, and 1/3 on half actions
 ## ITerm
   # Profiles > Working Directory > Reuse previous session's directory
