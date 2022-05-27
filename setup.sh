@@ -133,7 +133,8 @@ brew install --cask "visual-studio-code" && \
 brew install --cask slack && \
 brew install --cask rectangle && \
 brew install --cask caffeine && \
-brew install ack
+brew install ack && \
+brew install graphviz 
 
 #brew install "yarn", args: ["ignore-dependencies"] && \
 
