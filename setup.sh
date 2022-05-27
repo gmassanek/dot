@@ -38,7 +38,7 @@ brew install "neovim"
 
 echo 'Symlinking nvim setup'
 cd ~/.config
-ln -s .dot/nvim nvim
+ln -s ~/.dot/nvim nvim
 cd ~
 git clone https://github.com/VundleVim/Vundle.vim.git nvim/bundle/Vundle.vim/
 
