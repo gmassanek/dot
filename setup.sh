@@ -162,3 +162,5 @@ mkdir ~/Downloads/screenshots
   # Repeated Commands: cycle 1/2, 2/3, and 1/3 on half actions
 ## ITerm
   # Profiles > Working Directory > Reuse previous session's directory
+## Docker
+  # Start docker when you login
