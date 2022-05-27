@@ -137,6 +137,9 @@ brew install --cask spotify && \
 brew install ack && \
 brew install graphviz 
 
+brew tap heroku/brew && brew install heroku
+
+
 #brew install "yarn", args: ["ignore-dependencies"] && \
 
 
