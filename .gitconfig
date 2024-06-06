@@ -133,5 +133,5 @@
 [include]
   path = .gitconfig.user
 [user]
-	email = geoff@stellarcred.com
+	email = geoff@stellarfi.com
 	name = Geoff Massanek

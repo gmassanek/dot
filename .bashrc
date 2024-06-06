@@ -15,6 +15,8 @@ export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+export PATH="/Users/geoff/.yarn/bin:$PATH"
+export PATH="/Users/geoff/.nodenv/versions/18.0.0/bin:$PATH"
 #export PATH="/usr/local/opt/python@3.9/libexec/bin:$PATH"
 #export PATH="/usr/local/opt/openssl@3/bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init - bash)"; fi
@@ -58,6 +60,8 @@ alias grv='git remote -v'
 alias gd='git diff'
 alias gprom="git pull --rebase origin master"
 alias gpromm="git pull --rebase origin main"
+alias gpromm="git pull --rebase origin main"
+alias gpush="git push origin head"
 alias grmm='git branch --merged | grep -v "\*" | grep -v master | grep -v dev | xargs -n 1 git branch -d'
 alias gack="git ls-files -oc --exclude-standard | ack -x"
 
@@ -86,3 +90,7 @@ eval "$(pyenv init -)"
 
 # heroku autocomplete setup
 HEROKU_AC_BASH_SETUP_PATH=/Users/geoff/Library/Caches/heroku/autocomplete/bash_setup && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH;
+
+# bit
+export PATH="$PATH:/Users/geoff/bin"
+# bit end

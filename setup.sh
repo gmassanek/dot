@@ -134,11 +134,16 @@ brew install --cask slack && \
 brew install --cask rectangle && \
 brew install --cask caffeine && \
 brew install --cask spotify && \
+brew install --cask figma \
+brew install --cask snowflake-snowsql \
+brew install ack \
 brew install ack && \
-brew install graphviz 
+brew install graphviz
 
 brew tap heroku/brew && brew install heroku
 
+brew tap dbt-labs/dbt
+brew install dbt-snowflake
 
 #brew install "yarn", args: ["ignore-dependencies"] && \
 

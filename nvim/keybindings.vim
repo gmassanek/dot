@@ -26,3 +26,6 @@ nmap ,w :StripWhitespace<CR>
 " Cntl-/ to toggle comments
 map <C-/> :TComment<CR>
 imap <C-/> <Esc>:TComment<CR>i
+
+" Format JSON
+nmap JQ :%!jq .<CR>
