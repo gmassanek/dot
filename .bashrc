@@ -17,6 +17,7 @@ export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 export PATH="/Users/geoff/.yarn/bin:$PATH"
 export PATH="/Users/geoff/.nodenv/versions/18.0.0/bin:$PATH"
+export PATH="/Users/geoff/.docker/cli-plugins:$PATH"
 #export PATH="/usr/local/opt/python@3.9/libexec/bin:$PATH"
 #export PATH="/usr/local/opt/openssl@3/bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init - bash)"; fi
@@ -62,7 +63,8 @@ alias gprom="git pull --rebase origin master"
 alias gpromm="git pull --rebase origin main"
 alias gpromm="git pull --rebase origin main"
 alias gpush="git push origin head"
-alias grmm='git branch --merged | grep -v "\*" | grep -v master | grep -v dev | xargs -n 1 git branch -d'
+# alias grmm='git branch --merged | grep -v "\*" | grep -v master | grep -v dev | xargs -n 1 git branch -d'
+alias grmm='~/.dot/.clean-merged-branches.sh'
 alias gack="git ls-files -oc --exclude-standard | ack -x"
 
 alias convoxp='convox login internal-convox-production-i-373700845.us-east-1.elb.amazonaws.com'
