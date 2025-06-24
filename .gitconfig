@@ -72,6 +72,7 @@
   # rebase
   rc = rebase --continue            # continue rebase
   rs = rebase --skip                # skip rebase
+  ra = rebase --abort               # abort rebase
 
   # remote
   r = remote -v                     # show remotes (verbose)

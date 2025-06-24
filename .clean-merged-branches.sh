@@ -1,15 +1,38 @@
 #!/bin/bash
 
-# Get the list of local branches excluding the current branch, master, and dev
-branches=$(git branch --format="%(refname:short)" | grep -v "^*" | grep -vE "^(master|dev|main)$")
+set -euo pipefail
 
-# Iterate through all local branches
+# Get current branch
+current_branch=$(git symbolic-ref --short HEAD)
+
+# Skip protected branches
+protected_branches=("master" "main" "dev" "$current_branch")
+
+# Get all local branches
+branches=$(git for-each-ref --format='%(refname:short)' refs/heads/)
+
 for branch in $branches; do
-    # Find the merge base between master and the branch
-    mergeBase=$(git merge-base master "$branch")
+  # Skip protected branches
+  if [[ " ${protected_branches[*]} " == *" $branch "* ]]; then
+    continue
+  fi
 
-    # Create a commit tree for the branch and check if the changes are already in master
-    if [[ $(git cherry master $(git commit-tree $(git rev-parse "$branch^{tree}") -p $mergeBase -m _)) == "-"* ]]; then
-        git branch -D "$branch"
-    fi
+  # Try safe delete
+  if git branch -d "$branch" 2>/dev/null; then
+    echo "Deleted $branch (safely)"
+    continue
+  fi
+
+  # Safe delete failed; check if it's squash-merged
+  merge_base=$(git merge-base "$current_branch" "$branch")
+  branch_tree=$(git rev-parse "$branch^{tree}")
+  commit=$(git commit-tree "$branch_tree" -p "$merge_base" -m "_")
+  cherry_output=$(git cherry "$current_branch" "$commit")
+
+  if [[ $cherry_output == "-"* ]]; then
+    echo "Squash-merged detected. Forcing delete of $branch"
+    # git branch -D "$branch"
+  else
+    echo "Not merged: $branch"
+  fi
 done

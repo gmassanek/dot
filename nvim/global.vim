@@ -38,6 +38,13 @@ set softtabstop=2          " yerp
 set shiftwidth=2
 set tabstop=4
 
+" Force these settings for markdown files
+augroup markdown_indent_override
+  autocmd!
+  autocmd FileType markdown setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+augroup END
+
+
 " ----------------------------------------------------------------------------
 "  Line Folkding
 " ----------------------------------------------------------------------------

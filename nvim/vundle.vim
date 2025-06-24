@@ -8,6 +8,8 @@ set rtp+=~/.config/nvim/bundle/Vundle.vim
 "call vundle#begin("~/.config/nvim/bundle")
 call vundle#begin()
 
+" Add something here, then run :PluginInstall
+
 "call plug#begin()
 
 Plugin 'gmarik/Vundle.vim'
@@ -29,6 +31,9 @@ Plugin 'JazzCore/ctrlp-cmatcher'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'fatih/vim-go', {'for': 'go'}
 Plugin 'kassio/neoterm'
+Plugin 'github/copilot.vim'
+Plugin 'nvim-lua/plenary.nvim'
+Plugin 'CopilotC-Nvim/CopilotChat.nvim'
 
 " Autocomplete
 if has('nvim')
@@ -47,4 +52,5 @@ Plugin 'zchee/deoplete-clang'
 Plugin 'rhysd/vim-clang-format'
 
 call vundle#end()
+
 filetype plugin indent on       " required

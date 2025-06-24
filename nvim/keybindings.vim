@@ -7,12 +7,12 @@ map <C-K> <C-W>k
 map <C-H> <C-W>h
 map <C-L> <C-W>l
 
-" edit vimrc
-map <leader>v :sp ~/.config/init.vim<CR><C-W>_
-map <leader>V :source ~/.config/init.vim<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
-
 " line folding
 nnoremap <Space> za
+
+" edit vimrc
+map <leader>v :sp ~/.config/nvim/init.vim<CR><C-W>_
+map <leader>V :source ~/.config/nvim/init.vim<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " insert hash rocket
 imap <C-l> <Space>=><Space>

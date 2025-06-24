@@ -26,7 +26,6 @@
 --ignore-dir=fixtures
 --ignore-dir=.happypack
 --ignore-dir=public/assets/webpack
---ignore-dir=doc
 --ignore-dir=coverage
 --ignore-file=is:tags
 --ignore-file=is:tsconfig.tsbuildinfo

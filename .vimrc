@@ -1,5 +1,6 @@
 source ~/.config/nvim/vundle.vim
 source ~/.config/nvim/global.vim
+source ~/.config/nvim/copilot.vim
 source ~/.config/nvim/status_bar.vim
 source ~/.config/nvim/keybindings.vim
 source ~/.config/nvim/operate_on_indent_levels.vim
